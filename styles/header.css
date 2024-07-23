@@ -1,0 +1,150 @@
+.header-menu-hamburguer {
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/Menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.container-button:checked ~ .container-label > .header-menu-hamburguer {
+  background-image: url("../assets/Menu Aberto.svg");
+}
+
+.container-button:checked ~ .container-label {
+  background: var(--blue-degrade);
+}
+
+header {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container-img {
+  padding: 1em;
+}
+
+.container-text {
+  display: none;
+}
+
+.container-title,
+.options {
+  display: none;
+}
+
+.list-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 60vw;
+}
+
+.container-button {
+  display: none;
+}
+
+.container-button:checked ~ .list-menu {
+  display: block;
+}
+
+.list-menu-title,
+.list-menu-item {
+  padding: 1em;
+  background-color: var(--white);
+}
+
+.list-menu-title {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.list-menu-link {
+  background: var(--blue-degrade);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 1024px) {
+  .container-title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+
+    display: block;
+  }
+
+  .options {
+    display: flex;
+    list-style: none;
+  }
+
+  .options-item {
+    padding: 0 1em;
+    text-transform: uppercase;
+  }
+
+  .options-link {
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  .img-heart,
+  .header-menu-hamburguer,
+  .options-menu {
+    display: none;
+  }
+
+  .options-menu:checked ~ .list-menu {
+    display: block;
+    width: auto;
+  }
+
+  .options-menu:checked ~ .options-label > .options-item {
+    background: var(--blue-degrade);
+    color: var(--white);
+  }
+
+  .options-item {
+    padding: 1.5em 1.5em;
+  }
+
+  .list-menu-item:hover {
+    background: var(--blue-degrade);
+  }
+
+  .list-menu-item:hover > .list-menu-link {
+    -webkit-text-fill-color: var(--white);
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 1728px) {
+  .container-link {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+  }
+
+  .container-text {
+    display: block;
+  }
+
+  header {
+    padding: 0 2em;
+  }
+
+  .options {
+    margin-right: auto;
+  }
+}
